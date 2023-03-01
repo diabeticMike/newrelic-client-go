@@ -390,7 +390,7 @@ func (c *Client) Do(req *Request) (*http.Response, error) {
 		return resp, nil
 	}
 
-	jsonErr := json.Unmarshal(body, req.value)
+	jsonErr := json.Unmarshal(body, &req.value)
 	if jsonErr != nil {
 		return nil, jsonErr
 	}
